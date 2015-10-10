@@ -8,7 +8,6 @@ namespace DiplomaDataModel.Models
 {
     public class Choice
     {
-        [Required]
         public int ChoiceId { get; set; }
         [Required]
         [StringLength(9), RegularExpression("A[0-9]{8}")]

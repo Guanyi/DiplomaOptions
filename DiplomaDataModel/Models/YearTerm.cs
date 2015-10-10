@@ -8,7 +8,6 @@ namespace DiplomaDataModel.Models
 {
     public class YearTerm
     {
-        [Required]
         public int YearTermId { get; set; }
 
         [Required]
@@ -19,7 +18,7 @@ namespace DiplomaDataModel.Models
 
         [Required]
         public bool IsDefault { get; set; }
-        [Required]
+
         public List<Choice> Choices { get; set; }
     }
 }

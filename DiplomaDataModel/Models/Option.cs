@@ -9,7 +9,6 @@ namespace DiplomaDataModel.Models
 {
     public class Option
     {
-        [Required]
         public int OptionId { get; set; }
         [Required]
         [MinLength(2), MaxLength(30)]
