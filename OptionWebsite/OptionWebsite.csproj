@@ -160,12 +160,22 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OptionController.cs" />
+    <Compile Include="Controllers\YearTermController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migration\Records\201510101217023_InitialCreate.cs" />
     <Compile Include="Migration\Records\201510101217023_InitialCreate.Designer.cs">
       <DependentUpon>201510101217023_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migration\Records\201510111608547_no require for choice date.cs" />
+    <Compile Include="Migration\Records\201510111608547_no require for choice date.Designer.cs">
+      <DependentUpon>201510111608547_no require for choice date.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migration\Records\201510111821403_update student name max char.cs" />
+    <Compile Include="Migration\Records\201510111821403_update student name max char.Designer.cs">
+      <DependentUpon>201510111821403_update student name max char.cs</DependentUpon>
     </Compile>
     <Compile Include="Migration\Records\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -206,8 +216,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
@@ -220,6 +228,16 @@
     <Content Include="Views\Account\Manage.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Option\Create.cshtml" />
+    <Content Include="Views\Option\Delete.cshtml" />
+    <Content Include="Views\Option\Details.cshtml" />
+    <Content Include="Views\Option\Edit.cshtml" />
+    <Content Include="Views\Option\Index.cshtml" />
+    <Content Include="Views\YearTerm\Create.cshtml" />
+    <Content Include="Views\YearTerm\Delete.cshtml" />
+    <Content Include="Views\YearTerm\Details.cshtml" />
+    <Content Include="Views\YearTerm\Edit.cshtml" />
+    <Content Include="Views\YearTerm\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -240,6 +258,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migration\Records\201510101217023_InitialCreate.resx">
       <DependentUpon>201510101217023_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migration\Records\201510111608547_no require for choice date.resx">
+      <DependentUpon>201510111608547_no require for choice date.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migration\Records\201510111821403_update student name max char.resx">
+      <DependentUpon>201510111821403_update student name max char.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
