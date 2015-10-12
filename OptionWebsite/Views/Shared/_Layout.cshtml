@@ -21,9 +21,12 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Manage Year & Term", "Index", "YearTerm")</li>
-                    <li>@Html.ActionLink("Manage Options", "Index", "Option")</li>
+                    <li>@Html.ActionLink("Option Select Page", "Index", "Home")</li>
+                    @if(User.IsInRole("Admin"))
+                    { 
+                        <li>@Html.ActionLink("Manage Year & Term", "Index", "YearTerm")</li>
+                        <li>@Html.ActionLink("Manage Options", "Index", "Option")</li>
+                    }
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

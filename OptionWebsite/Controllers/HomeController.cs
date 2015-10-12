@@ -24,18 +24,20 @@ namespace OptionWebsite.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Index(Choice choice)
         {
-            if (ModelState.IsValid)
+            //YearTerm selectedYearTerm = db.YearTerms.SingleOrDefault(y => y.IsDefault == true);
+            choice.YearTerm = db.YearTerms.SingleOrDefault(y => y.IsDefault == true);
+            
+            //check the input model is valid and duplicate rows with the same StudentId in the StudentOptionChoices is not allowed in the same YearTerm
+            if (ModelState.IsValid && !db.Choices.Any(c => c.StudentId == choice.StudentId && c.YearTerm.YearTermId == choice.YearTerm.YearTermId))
             {
                 choice.SelectionDate = DateTime.Now;
+                //choice.YearTerm.YearTermId = selectedYearTerm.YearTermId;
                 db.Choices.Add(choice);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            else
-            {
-                ViewBag.OptionList = new SelectList(db.Options.Where(o => o.IsActive == true).OrderBy(o => o.Title), "OptionId", "Title");
-                return View(choice);
-            }
+            ViewBag.OptionList = new SelectList(db.Options.Where(o => o.IsActive == true).OrderBy(o => o.Title), "OptionId", "Title");
+            return View(choice);
         }
     }
 }

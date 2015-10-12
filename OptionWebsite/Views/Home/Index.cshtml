@@ -1,7 +1,7 @@
 ﻿@model DiplomaDataModel.Models.Choice
 
 @{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Option Selection Page";
 }
 
 <div class="jumbotron">
@@ -10,46 +10,53 @@
     { 
         @Html.AntiForgeryToken();
         <div class="form-group">
-            @Html.LabelFor(m => m.StudentId, new { @class = "col-md-2 control-label" })
-            <div class="col-md-10">
+            @Html.LabelFor(m => m.StudentId, new { @class = "col-md-3 control-label" })
+            <div class="col-md-9">
                 @Html.TextBoxFor(m => m.StudentId, new { @class = "form-control" })
             </div>
         </div>
          
         <div class="form-group">
-            @Html.LabelFor(m => m.StudentFirstName, new { @class = "col-md-2 control-label" })
-            <div class="col-md-10">
+            @Html.LabelFor(m => m.StudentFirstName, new { @class = "col-md-3 control-label" })
+            <div class="col-md-9">
                 @Html.TextBoxFor(m => m.StudentFirstName, new { @class = "form-control" })
             </div>
         </div>
         
         <div class="form-group">
-            @Html.LabelFor(m => m.StudentLastName, new { @class = "col-md-2 control-label" })
-            <div class="col-md-10">
+            @Html.LabelFor(m => m.StudentLastName, new { @class = "col-md-3 control-label" })
+            <div class="col-md-9" width: >
                 @Html.TextBoxFor(m => m.StudentLastName, new { @class = "form-control" })
             </div>
         </div>
-        
+
         <div class="form-group">
-            @Html.LabelFor(m => m.FirstChoiceOptionId, new { @class = "col-md-2 control-label" })
-            @Html.DropDownListFor(m => m.FirstChoiceOptionId, ViewBag.OptionList as SelectList)
+            @Html.LabelFor(m => m.FirstChoiceOptionId, new { @class = "col-md-3 control-label" })
+            <div class="col-md-9">
+                @Html.DropDownListFor(m => m.FirstChoiceOptionId, ViewBag.OptionList as SelectList, new { @class = "dropdown" })
+            </div>
         </div>
-        
+
         <div class="form-group">
-            @Html.LabelFor(m => m.SecondChoiceOptionId, new { @class = "col-md-2 control-label" })
-            @Html.DropDownListFor(m => m.SecondChoiceOptionId, ViewBag.OptionList as SelectList)
+            @Html.LabelFor(m => m.SecondChoiceOptionId, new { @class = "col-md-3 control-label" })
+            <div class="col-md-9">
+                @Html.DropDownListFor(m => m.SecondChoiceOptionId, ViewBag.OptionList as SelectList, new { @class = "dropdown" })
+            </div>
         </div>
-        
+
         <div class="form-group">
-            @Html.LabelFor(m => m.ThirdChoiceOptionId, new { @class = "col-md-2 control-label" })
-            @Html.DropDownListFor(m => m.ThirdChoiceOptionId, ViewBag.OptionList as SelectList)
+            @Html.LabelFor(m => m.ThirdChoiceOptionId, new { @class = "col-md-3 control-label" })
+            <div class="col-md-9">
+                @Html.DropDownListFor(m => m.ThirdChoiceOptionId, ViewBag.OptionList as SelectList, new { @class = "dropdown" })
+            </div>
         </div>
-        
+
         <div class="form-group">
-            @Html.LabelFor(m => m.FourthChoiceOptionId, new { @class = "col-md-2 control-label" })
-            @Html.DropDownListFor(m => m.FourthChoiceOptionId, ViewBag.OptionList as SelectList)
+            @Html.LabelFor(m => m.FourthChoiceOptionId, new { @class = "col-md-3 control-label" })
+            <div class="col-md-9">
+                @Html.DropDownListFor(m => m.FourthChoiceOptionId, ViewBag.OptionList as SelectList, new { @class = "dropdown" })
+            </div>
         </div>
-        
 
         <hr />
         @Html.ValidationSummary()
