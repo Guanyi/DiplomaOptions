@@ -12,7 +12,14 @@
         <div class="form-group">
             @Html.LabelFor(m => m.StudentId, new { @class = "col-md-3 control-label" })
             <div class="col-md-9">
-                @Html.TextBoxFor(m => m.StudentId, new { @class = "form-control" })
+                @if(ViewBag.CurrentStudentId != null)
+                {
+                    @Html.TextBoxFor(m => m.StudentId, new { @class = "form-control", Value = (string)ViewBag.CurrentStudentId, @readonly = "readonly" })
+                }
+                else
+                {
+                    @Html.TextBoxFor(m => m.StudentId, new { @class = "form-control" })
+                }
             </div>
         </div>
          

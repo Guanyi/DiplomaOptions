@@ -16,6 +16,11 @@ namespace OptionWebsite.Controllers
         public ActionResult Index()
         {
             ViewBag.OptionList = new SelectList(db.Options.Where(o => o.IsActive == true).OrderBy(o => o.Title), "OptionId", "Title");
+            if(!User.IsInRole("Admin"))
+            {
+                ViewBag.CurrentStudentId = User.Identity.Name;
+            }
+            
             return View();
         }
 
