@@ -15,12 +15,18 @@ namespace OptionWebsite.Controllers
         [Authorize]
         public ActionResult Index()
         {
+            return View();
+        }
+
+        [Authorize]
+        public ActionResult SelectOption()
+        {
             //from the option table, only select the active options, pass these records with OptionId to be drop down menu value
             //Title will be the drop down menu text/
             ViewBag.OptionList = new SelectList(db.Options.Where(o => o.IsActive == true).OrderBy(o => o.Title), "OptionId", "Title");
-            
+
             //if the login user is not admin, then get the student's student number, put it in the Student Id text box.
-            if(!User.IsInRole("Admin"))
+            if (!User.IsInRole("Admin"))
             {
                 ViewBag.CurrentStudentId = User.Identity.Name;
             }
@@ -30,7 +36,7 @@ namespace OptionWebsite.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Index(Choice choice)
+        public ActionResult SelectOption(Choice choice)
         {
             //get the only default YearTerm row by BCIT option policy
             choice.YearTerm = db.YearTerms.SingleOrDefault(y => y.IsDefault == true);

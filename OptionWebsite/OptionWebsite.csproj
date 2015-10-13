@@ -20,6 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -39,6 +40,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -107,12 +116,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.1.0.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
@@ -159,12 +162,22 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ChoicesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OptionController.cs" />
     <Compile Include="Controllers\YearTermController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migration\Identity\201510100952004_InitialCreate.cs" />
+    <Compile Include="Migration\Identity\201510100952004_InitialCreate.Designer.cs">
+      <DependentUpon>201510100952004_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migration\Identity\201510122243568_fix applicationdb error.cs" />
+    <Compile Include="Migration\Identity\201510122243568_fix applicationdb error.Designer.cs">
+      <DependentUpon>201510122243568_fix applicationdb error.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migration\Identity\Configuration.cs" />
     <Compile Include="Migration\Records\201510101217023_InitialCreate.cs" />
     <Compile Include="Migration\Records\201510101217023_InitialCreate.Designer.cs">
       <DependentUpon>201510101217023_InitialCreate.cs</DependentUpon>
@@ -185,6 +198,14 @@
     <Compile Include="Migration\Records\201510120140042_In Choice table, unset YearTerm to be required.Designer.cs">
       <DependentUpon>201510120140042_In Choice table, unset YearTerm to be required.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migration\Records\201510122316414_remove date scaffold and date not required.cs" />
+    <Compile Include="Migration\Records\201510122316414_remove date scaffold and date not required.Designer.cs">
+      <DependentUpon>201510122316414_remove date scaffold and date not required.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migration\Records\201510122327505_Fix title option length.cs" />
+    <Compile Include="Migration\Records\201510122327505_Fix title option length.Designer.cs">
+      <DependentUpon>201510122327505_Fix title option length.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migration\Records\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\DataContext.cs" />
@@ -193,8 +214,13 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\DiplomaOptions.mdf" />
+    <Content Include="App_Data\DiplomaOptions_log.ldf">
+      <DependentUpon>DiplomaOptions.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Docs\MigrationScripts.txt" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -246,9 +272,15 @@
     <Content Include="Views\YearTerm\Details.cshtml" />
     <Content Include="Views\YearTerm\Edit.cshtml" />
     <Content Include="Views\YearTerm\Index.cshtml" />
+    <Content Include="Views\Choices\Create.cshtml" />
+    <Content Include="Views\Choices\Delete.cshtml" />
+    <Content Include="Views\Choices\Details.cshtml" />
+    <Content Include="Views\Choices\Edit.cshtml" />
+    <Content Include="Views\Choices\Index.cshtml" />
+    <Content Include="Views\Home\SelectOption.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="Migration\Records\201510122315300_remove date scaffold\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -264,6 +296,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Migration\Identity\201510100952004_InitialCreate.resx">
+      <DependentUpon>201510100952004_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migration\Identity\201510122243568_fix applicationdb error.resx">
+      <DependentUpon>201510122243568_fix applicationdb error.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migration\Records\201510101217023_InitialCreate.resx">
       <DependentUpon>201510101217023_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
@@ -278,6 +316,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migration\Records\201510120140042_In Choice table, unset YearTerm to be required.resx">
       <DependentUpon>201510120140042_In Choice table, unset YearTerm to be required.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migration\Records\201510122316414_remove date scaffold and date not required.resx">
+      <DependentUpon>201510122316414_remove date scaffold and date not required.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migration\Records\201510122327505_Fix title option length.resx">
+      <DependentUpon>201510122327505_Fix title option length.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

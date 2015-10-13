@@ -20,12 +20,16 @@
                 @Html.ActionLink("CST Option Selection", "Index", "Home", null, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Option Select Page", "Index", "Home")</li>
+                <ul class="nav navbar-nav">                  
                     @if(User.IsInRole("Admin"))
                     { 
                         <li>@Html.ActionLink("Manage Year & Term", "Index", "YearTerm")</li>
                         <li>@Html.ActionLink("Manage Options", "Index", "Option")</li>
+                        <li>@Html.ActionLink("Manage Student Choices", "Index", "Choices")</li>
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("Select Option", "SelectOption", "Home")</li>
                     }
                 </ul>
                 @Html.Partial("_LoginPartial")
