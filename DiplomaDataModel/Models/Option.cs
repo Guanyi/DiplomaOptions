@@ -11,7 +11,7 @@ namespace DiplomaDataModel.Models
     {
         public int OptionId { get; set; }
         [Required]
-        [MinLength(2), MaxLength(50)]
+        [MinLength(2), MaxLength(30)]
         public string Title { get; set; }
         [Required]
         public bool IsActive { get; set; }

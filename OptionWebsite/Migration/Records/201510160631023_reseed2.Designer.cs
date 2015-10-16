@@ -7,13 +7,13 @@ namespace OptionWebsite.Migration.Records
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Fixtitleoptionlength : IMigrationMetadata
+    public sealed partial class reseed2 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Fixtitleoptionlength));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(reseed2));
         
         string IMigrationMetadata.Id
         {
-            get { return "201510122327505_Fix title option length"; }
+            get { return "201510160631023_reseed2"; }
         }
         
         string IMigrationMetadata.Source

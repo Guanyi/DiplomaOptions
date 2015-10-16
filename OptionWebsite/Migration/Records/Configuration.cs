@@ -1,6 +1,9 @@
 namespace OptionWebsite.Migration.Records
 {
     using DiplomaDataModel.Models;
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
+    using Models;
     using System;
     using System.Collections.Generic;
     using System.Data.Entity;
@@ -29,6 +32,28 @@ namespace OptionWebsite.Migration.Records
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
+            context.YearTerms.AddOrUpdate(
+                y => new { y.Year, y.Term } ,  
+                new YearTerm() { Year = 2015, Term = 10, IsDefault = false },
+                new YearTerm() { Year = 2015, Term = 20, IsDefault = false },
+                new YearTerm() { Year = 2015, Term = 30, IsDefault = false },
+                new YearTerm() { Year = 2016, Term = 10, IsDefault = true }
+            );
+            context.SaveChanges();
+
+            context.Options.AddOrUpdate(
+                yt => yt.Title,
+                new Option() { Title = "Data Communications", IsActive = true },
+                new Option() { Title = "Client Server", IsActive = true },
+                new Option() { Title = "Digital Processing", IsActive = true },
+                new Option() { Title = "Information Systems", IsActive = true },
+                new Option() { Title = "Database", IsActive = false },
+                new Option() { Title = "Web & Mobile", IsActive = true },
+                new Option() { Title = "Tech Pro", IsActive = false }
+                );
+            context.SaveChanges();
+
         }
     }
 }

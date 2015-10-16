@@ -19,7 +19,6 @@ namespace OptionWebsite.Controllers
         // GET: Choices
         public ActionResult Index()
         {
-
             return View(db.Choices.ToList());
         }
 
@@ -78,7 +77,7 @@ namespace OptionWebsite.Controllers
             }
 
             Choice choice = db.Choices.Find(id);
-            
+
             ViewBag.OptionList = new SelectList(
                 db.Options.Where(o => o.IsActive == true)
                 .OrderBy(o => o.Title),
@@ -99,7 +98,7 @@ namespace OptionWebsite.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ChoiceId,StudentId,StudentFirstName,StudentLastName,FirstChoiceOptionId,SecondChoiceOptionId,ThirdChoiceOptionId,FourthChoiceOptionId,SelectionDate")] Choice choice)
         {
-            
+
             if (ModelState.IsValid)
             {
                 db.Entry(choice).State = EntityState.Modified;

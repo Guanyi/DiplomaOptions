@@ -7,13 +7,13 @@ namespace OptionWebsite.Migration.Records
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class removedatescaffoldanddatenotrequired : IMigrationMetadata
+    public sealed partial class reseed4 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(removedatescaffoldanddatenotrequired));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(reseed4));
         
         string IMigrationMetadata.Id
         {
-            get { return "201510122316414_remove date scaffold and date not required"; }
+            get { return "201510160643165_reseed4"; }
         }
         
         string IMigrationMetadata.Source

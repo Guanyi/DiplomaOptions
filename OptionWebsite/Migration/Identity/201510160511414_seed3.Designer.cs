@@ -7,13 +7,13 @@ namespace OptionWebsite.Migration.Identity
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class fixapplicationdberror : IMigrationMetadata
+    public sealed partial class seed3 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(fixapplicationdberror));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(seed3));
         
         string IMigrationMetadata.Id
         {
-            get { return "201510122243568_fix applicationdb error"; }
+            get { return "201510160511414_seed3"; }
         }
         
         string IMigrationMetadata.Source

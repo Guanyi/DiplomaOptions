@@ -3,7 +3,7 @@ namespace OptionWebsite.Migration.Records
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class removedatescaffoldanddatenotrequired : DbMigration
+    public partial class reseed4 : DbMigration
     {
         public override void Up()
         {

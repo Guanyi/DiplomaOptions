@@ -173,9 +173,29 @@
     <Compile Include="Migration\Identity\201510100952004_InitialCreate.Designer.cs">
       <DependentUpon>201510100952004_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migration\Identity\201510122243568_fix applicationdb error.cs" />
-    <Compile Include="Migration\Identity\201510122243568_fix applicationdb error.Designer.cs">
-      <DependentUpon>201510122243568_fix applicationdb error.cs</DependentUpon>
+    <Compile Include="Migration\Identity\201510160427325_emailSupport.cs" />
+    <Compile Include="Migration\Identity\201510160427325_emailSupport.Designer.cs">
+      <DependentUpon>201510160427325_emailSupport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migration\Identity\201510160434007_seed.cs" />
+    <Compile Include="Migration\Identity\201510160434007_seed.Designer.cs">
+      <DependentUpon>201510160434007_seed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migration\Identity\201510160456501_seed1.cs" />
+    <Compile Include="Migration\Identity\201510160456501_seed1.Designer.cs">
+      <DependentUpon>201510160456501_seed1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migration\Identity\201510160511414_seed3.cs" />
+    <Compile Include="Migration\Identity\201510160511414_seed3.Designer.cs">
+      <DependentUpon>201510160511414_seed3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migration\Identity\201510160535141_seed4.cs" />
+    <Compile Include="Migration\Identity\201510160535141_seed4.Designer.cs">
+      <DependentUpon>201510160535141_seed4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migration\Identity\201510160539332_seed5.cs" />
+    <Compile Include="Migration\Identity\201510160539332_seed5.Designer.cs">
+      <DependentUpon>201510160539332_seed5.cs</DependentUpon>
     </Compile>
     <Compile Include="Migration\Identity\Configuration.cs" />
     <Compile Include="Migration\Records\201510101217023_InitialCreate.cs" />
@@ -198,13 +218,25 @@
     <Compile Include="Migration\Records\201510120140042_In Choice table, unset YearTerm to be required.Designer.cs">
       <DependentUpon>201510120140042_In Choice table, unset YearTerm to be required.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migration\Records\201510122316414_remove date scaffold and date not required.cs" />
-    <Compile Include="Migration\Records\201510122316414_remove date scaffold and date not required.Designer.cs">
-      <DependentUpon>201510122316414_remove date scaffold and date not required.cs</DependentUpon>
+    <Compile Include="Migration\Records\201510160620097_reseed.cs" />
+    <Compile Include="Migration\Records\201510160620097_reseed.Designer.cs">
+      <DependentUpon>201510160620097_reseed.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migration\Records\201510122327505_Fix title option length.cs" />
-    <Compile Include="Migration\Records\201510122327505_Fix title option length.Designer.cs">
-      <DependentUpon>201510122327505_Fix title option length.cs</DependentUpon>
+    <Compile Include="Migration\Records\201510160631023_reseed2.cs" />
+    <Compile Include="Migration\Records\201510160631023_reseed2.Designer.cs">
+      <DependentUpon>201510160631023_reseed2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migration\Records\201510160641456_reseed3.cs" />
+    <Compile Include="Migration\Records\201510160641456_reseed3.Designer.cs">
+      <DependentUpon>201510160641456_reseed3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migration\Records\201510160643165_reseed4.cs" />
+    <Compile Include="Migration\Records\201510160643165_reseed4.Designer.cs">
+      <DependentUpon>201510160643165_reseed4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migration\Records\201510160647291_reseed5.cs" />
+    <Compile Include="Migration\Records\201510160647291_reseed5.Designer.cs">
+      <DependentUpon>201510160647291_reseed5.cs</DependentUpon>
     </Compile>
     <Compile Include="Migration\Records\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -220,13 +252,13 @@
     </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Docs\MigrationScripts.txt" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\a1-comp4976.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -279,9 +311,7 @@
     <Content Include="Views\Choices\Index.cshtml" />
     <Content Include="Views\Home\SelectOption.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Migration\Records\201510122315300_remove date scaffold\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -299,8 +329,23 @@
     <EmbeddedResource Include="Migration\Identity\201510100952004_InitialCreate.resx">
       <DependentUpon>201510100952004_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migration\Identity\201510122243568_fix applicationdb error.resx">
-      <DependentUpon>201510122243568_fix applicationdb error.cs</DependentUpon>
+    <EmbeddedResource Include="Migration\Identity\201510160427325_emailSupport.resx">
+      <DependentUpon>201510160427325_emailSupport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migration\Identity\201510160434007_seed.resx">
+      <DependentUpon>201510160434007_seed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migration\Identity\201510160456501_seed1.resx">
+      <DependentUpon>201510160456501_seed1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migration\Identity\201510160511414_seed3.resx">
+      <DependentUpon>201510160511414_seed3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migration\Identity\201510160535141_seed4.resx">
+      <DependentUpon>201510160535141_seed4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migration\Identity\201510160539332_seed5.resx">
+      <DependentUpon>201510160539332_seed5.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migration\Records\201510101217023_InitialCreate.resx">
       <DependentUpon>201510101217023_InitialCreate.cs</DependentUpon>
@@ -317,11 +362,20 @@
     <EmbeddedResource Include="Migration\Records\201510120140042_In Choice table, unset YearTerm to be required.resx">
       <DependentUpon>201510120140042_In Choice table, unset YearTerm to be required.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migration\Records\201510122316414_remove date scaffold and date not required.resx">
-      <DependentUpon>201510122316414_remove date scaffold and date not required.cs</DependentUpon>
+    <EmbeddedResource Include="Migration\Records\201510160620097_reseed.resx">
+      <DependentUpon>201510160620097_reseed.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migration\Records\201510122327505_Fix title option length.resx">
-      <DependentUpon>201510122327505_Fix title option length.cs</DependentUpon>
+    <EmbeddedResource Include="Migration\Records\201510160631023_reseed2.resx">
+      <DependentUpon>201510160631023_reseed2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migration\Records\201510160641456_reseed3.resx">
+      <DependentUpon>201510160641456_reseed3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migration\Records\201510160643165_reseed4.resx">
+      <DependentUpon>201510160643165_reseed4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migration\Records\201510160647291_reseed5.resx">
+      <DependentUpon>201510160647291_reseed5.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

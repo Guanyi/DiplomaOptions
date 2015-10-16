@@ -11,7 +11,7 @@ namespace OptionWebsite.Controllers
     public class HomeController : Controller
     {
         private DataContext db = new DataContext();
-        
+
         [Authorize]
         public ActionResult Index()
         {
@@ -40,7 +40,7 @@ namespace OptionWebsite.Controllers
         {
             //get the only default YearTerm row by BCIT option policy
             choice.YearTerm = db.YearTerms.SingleOrDefault(y => y.IsDefault == true);
-            
+
             //check the input model is valid and duplicate rows with the same StudentId in the StudentOptionChoices is not allowed in the same YearTerm
             if (ModelState.IsValid && !db.Choices.Any(c => c.StudentId == choice.StudentId && c.YearTerm.YearTermId == choice.YearTerm.YearTermId))
             {

@@ -42,7 +42,7 @@ namespace DiplomaDataModel.Models
         [Display(Name = "Fourth Choice:")]
         public int FourthChoiceOptionId { get; set; }
 
-        [ScaffoldColumn(false)]
+        [Required]
         public DateTime SelectionDate { get; set; }
 
         public YearTerm YearTerm { get; set; }

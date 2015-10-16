@@ -4,8 +4,10 @@
     ViewBag.Title = "Details";
 }
 
+<h2>Details</h2>
+
 <div>
-    <h2>@ViewBag.Title</h2>
+    <h4>Choice</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -62,6 +64,14 @@
 
         <dd>
             @Html.DisplayFor(model => model.FourthChoiceOptionId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SelectionDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SelectionDate)
         </dd>
 
     </dl>
